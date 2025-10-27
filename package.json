@@ -1,0 +1,23 @@
+{
+  "name": "pruebadiagnostico",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/javier020301001/PruebaDiagnostico.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/javier020301001/PruebaDiagnostico/issues"
+  },
+  "homepage": "https://github.com/javier020301001/PruebaDiagnostico#readme",
+  "description": "",
+  "devDependencies": {
+    "electron": "^38.4.0"
+  }
+}
