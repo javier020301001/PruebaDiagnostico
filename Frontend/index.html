@@ -49,31 +49,40 @@
             </div>
 
         </div>
+
         <div class="row">
             <div class="col-md-12">
                 <table class="table table-bordered table-striped text-center">
                     <thead>
                         <tr class="info">
-                            <th>N</th>
-                            <th>Name</th>
-                            <th>Description</th>
+                            <th>Id</th>
+                            <th>Title</th>
+                            <th>Body</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr><td>1</td><td>Javier Saransig</td><td>Labore duis voluptate eiusmod mollit...</td></tr>
-                        <tr><td>2</td><td>Pepe Chavez</td><td>Labore duis voluptate eiusmod mollit...</td></tr>
-                        <tr><td>3</td><td>Paco Gutierrez</td><td>Labore duis voluptate eiusmod mollit...</td></tr>
-                        <tr><td>4</td><td>Maria Perez</td><td>Labore duis voluptate eiusmod mollit...</td></tr>
-                        <tr><td>5</td><td>Luisa Godoy</td><td>Labore duis voluptate eiusmod mollit...</td></tr>
-                        <tr><td>6</td><td>Lana España</td><td>Labore duis voluptate eiusmod mollit...</td></tr>
-                        <tr><td>7</td><td>Ana Guido</td><td>Labore duis voluptate eiusmod mollit...</td></tr>
-                        <tr><td>8</td><td>Kendry Papa</td><td>Labore duis voluptate eiusmod mollit...</td></tr>
+                    <tbody id="data">
+                        
                     </tbody>
                 </table>
             </div>
         </div>
-
     </div>
+
+    <script>
+        let url = 'http://127.0.0.1:8000/posteos'
+        fetch(url)
+        .then(response => response.json())
+        .then(data => mostrardata(data))
+
+        const mostrardata = (data) => {
+            console.log(data)
+            let body = ''
+            for (let i = 0; i < data.length; i++){
+                body += `<tr><td>${data[i].id}</td><td>${data[i].title}</td><td>${data[i].body}</td></tr>`;
+            }
+            document.getElementById('data').innerHTML = body
+        }
+     </script>
 
 </body>
 </html>
